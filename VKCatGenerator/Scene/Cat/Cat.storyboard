@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q9P-OH-jr3">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cat View Controller-->
+        <scene sceneID="CPE-k9-jrj">
+            <objects>
+                <viewController title="Cat View Controller" id="q9P-OH-jr3" customClass="CatViewController" customModule="CatGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B4z-Le-8L5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cat" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cYW-Ab-9Wl">
+                                <rect key="frame" x="24" y="82.666666666666657" width="345" height="346.33333333333337"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cYW-Ab-9Wl" secondAttribute="height" multiplier="1:1" id="5jU-yR-Kau"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lfn-jB-feM">
+                                <rect key="frame" x="93" y="515" width="207" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Генерация нового кота"/>
+                                <connections>
+                                    <action selector="didTapButton:" destination="q9P-OH-jr3" eventType="touchUpInside" id="qUr-kw-f9M"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15k-mM-b6O">
+                                <rect key="frame" x="12" y="464" width="369" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="au1-P8-2qG">
+                                <rect key="frame" x="178" y="420" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pe5-bl-v4B"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cYW-Ab-9Wl" firstAttribute="centerX" secondItem="Pe5-bl-v4B" secondAttribute="centerX" id="06N-C2-LNb"/>
+                            <constraint firstItem="15k-mM-b6O" firstAttribute="leading" secondItem="Pe5-bl-v4B" secondAttribute="leading" constant="12" id="1gU-S3-jen"/>
+                            <constraint firstItem="lfn-jB-feM" firstAttribute="centerX" secondItem="Pe5-bl-v4B" secondAttribute="centerX" id="5eJ-E7-00C"/>
+                            <constraint firstItem="15k-mM-b6O" firstAttribute="top" secondItem="cYW-Ab-9Wl" secondAttribute="bottom" constant="30" id="EjQ-cg-glR"/>
+                            <constraint firstItem="cYW-Ab-9Wl" firstAttribute="leading" secondItem="Pe5-bl-v4B" secondAttribute="leading" constant="24" id="HTx-js-sZo"/>
+                            <constraint firstItem="Pe5-bl-v4B" firstAttribute="trailing" secondItem="15k-mM-b6O" secondAttribute="trailing" constant="12" id="JcW-lU-Ijw"/>
+                            <constraint firstItem="cYW-Ab-9Wl" firstAttribute="top" secondItem="Pe5-bl-v4B" secondAttribute="top" constant="30" id="MIu-0W-Ykv"/>
+                            <constraint firstItem="Pe5-bl-v4B" firstAttribute="trailing" secondItem="cYW-Ab-9Wl" secondAttribute="trailing" constant="24" id="QfL-3P-MCV"/>
+                            <constraint firstItem="lfn-jB-feM" firstAttribute="top" secondItem="15k-mM-b6O" secondAttribute="bottom" constant="30" id="ZtZ-20-i2u"/>
+                            <constraint firstItem="au1-P8-2qG" firstAttribute="centerX" secondItem="Pe5-bl-v4B" secondAttribute="centerX" id="bQP-aZ-ZfN"/>
+                            <constraint firstItem="au1-P8-2qG" firstAttribute="centerY" secondItem="Pe5-bl-v4B" secondAttribute="centerY" id="ujh-il-hUp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="au1-P8-2qG" id="DF2-Sj-4aP"/>
+                        <outlet property="catImageView" destination="cYW-Ab-9Wl" id="kIr-a9-063"/>
+                        <outlet property="generateCatButton" destination="lfn-jB-feM" id="tiX-wT-bGa"/>
+                        <outlet property="statusLabel" destination="15k-mM-b6O" id="SUN-X2-aXl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyk-gL-hTb" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-143" y="-44"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cat" catalog="system" width="128" height="102"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
